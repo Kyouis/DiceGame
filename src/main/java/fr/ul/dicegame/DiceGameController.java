@@ -1,4 +1,4 @@
-package com.example.dicegame;
+package main.java.fr.ul.dicegame;
 
 import javafx.fxml.FXML;
 import javafx.scene.control.Label;
@@ -8,7 +8,7 @@ public class HelloController {
     private Label welcomeText;
 
     @FXML
-    protected void onHelloButtonClick() {
-        welcomeText.setText("Welcome to JavaFX Application!");
+    protected void roll() {
+        //todo
     }
 }
