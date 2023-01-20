@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.scene.text.*?>
 <?import javafx.scene.control.*?>
 <?import java.lang.*?>
 <?import javafx.scene.layout.*?>
@@ -8,9 +9,20 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.control.Button?>
 
-
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="fr.ul.dicegame.Controller.DiceGameController">
    <children>
-      <Button layoutX="274.0" layoutY="292.0" mnemonicParsing="false" text="Roll" />
+      <Button layoutX="282.0" layoutY="336.0" mnemonicParsing="false" onAction="#roll" text="Roll" />
+      <Label fx:id="l1" layoutX="61.0" layoutY="96.0" prefHeight="188.0" prefWidth="178.0">
+         <font>
+            <Font size="96.0" />
+         </font>
+      </Label>
+      <Label fx:id="l2" layoutX="364.0" layoutY="96.0" prefHeight="188.0" prefWidth="178.0">
+         <font>
+            <Font size="96.0" />
+         </font>
+      </Label>
+      <RadioButton fx:id="rb1" layoutX="383.0" layoutY="319.0" mnemonicParsing="false" text="Dé 1 en premier" />
+      <RadioButton fx:id="rb2" layoutX="383.0" layoutY="353.0" mnemonicParsing="false" text="Dé 2 en premier" />
    </children>
 </AnchorPane>

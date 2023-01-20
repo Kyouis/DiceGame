@@ -5,10 +5,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="bd3e4161-4ce7-4dec-a414-53ec4f7d6655" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/fr/ul/dicegame/DiceGameController.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/fr/ul/dicegame/Main.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/fr/ul/dicegame/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/fr/ul/dicegame/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/module-info.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/module-info.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/fr/ul/dicegame/DiceGame.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/fr/ul/dicegame/DiceGame.fxml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -18,6 +19,7 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
+        <option value="CSS File" />
         <option value="Class" />
       </list>
     </option>
@@ -50,7 +52,9 @@
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "WebServerToolWindowFactoryState": "false",
+    "extract.method.default.visibility": "private",
     "last_opened_file_path": "C:/Users/Elève/IdeaProjects/DiceGame",
+    "list.type.of.created.stylesheet": "CSS",
     "project.structure.last.edited": "Problems",
     "project.structure.proportion": "0.15",
     "project.structure.side.proportion": "0.2"
@@ -61,6 +65,40 @@
       <recent name="main.java.fr.ul.dicegame" />
     </key>
   </component>
+  <component name="RunManager" selected="Application.Main">
+    <configuration name="DiceGameFX" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="fr.ul.dicegame.DiceGameFX" />
+      <module name="DiceGame" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="fr.ul.dicegame.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="fr.ul.dicegame.Main" />
+      <module name="DiceGame" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="fr.ul.dicegame.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Application.Main" />
+        <item itemvalue="Application.DiceGameFX" />
+      </list>
+    </recent_temporary>
+  </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
@@ -70,10 +108,32 @@
       <option name="presentableId" value="Default" />
       <updated>1669112979589</updated>
       <workItem from="1669113065782" duration="3827000" />
+      <workItem from="1673952852811" duration="2452000" />
+      <workItem from="1674204133018" duration="6605000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/fr/ul/dicegame/Main.java</url>
+          <line>13</line>
+          <option name="timeStamp" value="1" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-method">
+          <url>file://$PROJECT_DIR$/src/main/java/fr/ul/dicegame/Main.java</url>
+          <line>12</line>
+          <properties class="fr.ul.dicegame.Main" method="main">
+            <option name="EMULATED" value="true" />
+            <option name="WATCH_EXIT" value="false" />
+          </properties>
+          <option name="timeStamp" value="3" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>

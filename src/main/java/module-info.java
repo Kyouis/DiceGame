@@ -1,8 +1,11 @@
-module com.example.dicegame {
+module fr.ul.dicegame {
     requires javafx.controls;
     requires javafx.fxml;
             
                             
-    opens com.example.dicegame to javafx.fxml;
-    exports com.example.dicegame;
+    opens fr.ul.dicegame to javafx.fxml;
+    exports fr.ul.dicegame;
+    exports fr.ul.dicegame.Controller;
+
+    opens fr.ul.dicegame.Controller to javafx.fxml;
 }
