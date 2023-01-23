@@ -24,12 +24,17 @@
       </Label>
       <RadioButton fx:id="rb1" layoutX="383.0" layoutY="319.0" mnemonicParsing="false" text="Dé 1 en premier" />
       <RadioButton fx:id="rb2" layoutX="383.0" layoutY="353.0" mnemonicParsing="false" text="Dé 2 en premier" />
+      <Button fx:id="save" layoutX="213.0" layoutY="314.0" mnemonicParsing="false" onAction="#save" text="Save" />
+      <Button fx:id="load" layoutX="210.0" layoutY="358.0" mnemonicParsing="false" onAction="#load" text="Load" />
       <Label fx:id="score" layoutX="27.0" layoutY="301.0" prefHeight="54.0" prefWidth="186.0" text="Score : 0">
          <font>
             <Font size="18.0" />
          </font>
       </Label>
-      <Button fx:id="save" layoutX="213.0" layoutY="314.0" mnemonicParsing="false" onAction="#save" text="Save" />
-      <Button fx:id="load" layoutX="210.0" layoutY="358.0" mnemonicParsing="false" onAction="#load" text="Load" />
+      <Label fx:id="lthrow" layoutX="27.0" layoutY="331.0" prefHeight="54.0" prefWidth="186.0" text="Lancé n°: ">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Label>
    </children>
 </AnchorPane>

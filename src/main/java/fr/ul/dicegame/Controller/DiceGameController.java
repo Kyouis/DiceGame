@@ -15,6 +15,8 @@ public class DiceGameController {
 
     private CareTaker ct;
 
+    private XmlMapper map = new
+
     @FXML
     private Label l1;
 
@@ -28,6 +30,9 @@ public class DiceGameController {
 
     @FXML
     private RadioButton rb2;
+
+    @FXML
+    private Label lthrow;
 
     private ToggleGroup tg = new ToggleGroup();
 
@@ -54,6 +59,7 @@ public class DiceGameController {
     public void load() {
         currentScore = CareTaker.getInstance(d).getDs().getCurrentScore();
         throwNumber = CareTaker.getInstance(d).getDs().getNbTour();
+        lthrow.setText("Lancé n°: "+throwNumber);
         l1.setText(String.valueOf(CareTaker.getInstance(d).getDs().getD1Value()));
         l2.setText(String.valueOf(CareTaker.getInstance(d).getDs().getD2Value()));
     }
@@ -71,9 +77,11 @@ public class DiceGameController {
             }
 
             throwNumber++;
+            lthrow.setText("Lancé n°: "+throwNumber);
         } else {
             HighScore h = new HighScore("Jean", currentScore);
             throwNumber = 0;
+            currentScore = 0;
         }
     }
 

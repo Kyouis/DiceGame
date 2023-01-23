@@ -6,6 +6,7 @@
   <component name="ChangeListManager">
     <list default="true" id="bd3e4161-4ce7-4dec-a414-53ec4f7d6655" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/fr/ul/dicegame/Controller/DiceGameController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/fr/ul/dicegame/Controller/DiceGameController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/fr/ul/dicegame/DiceGame.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/fr/ul/dicegame/DiceGame.fxml" afterDir="false" />
     </list>
@@ -108,7 +109,8 @@
       <workItem from="1669113065782" duration="3827000" />
       <workItem from="1673952852811" duration="2452000" />
       <workItem from="1674204133018" duration="7540000" />
-      <workItem from="1674464200954" duration="5043000" />
+      <workItem from="1674464200954" duration="5270000" />
+      <workItem from="1674488365716" duration="1965000" />
     </task>
     <servers />
   </component>
