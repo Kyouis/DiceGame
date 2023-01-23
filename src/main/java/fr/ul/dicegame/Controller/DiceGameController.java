@@ -1,9 +1,6 @@
 package fr.ul.dicegame.Controller;
 
-import fr.ul.dicegame.Model.DieModel;
-import fr.ul.dicegame.Model.DieOneFirstStrategy;
-import fr.ul.dicegame.Model.DieTwoFirstStrategy;
-import fr.ul.dicegame.Model.Strategy;
+import fr.ul.dicegame.Model.*;
 import javafx.fxml.FXML;
 import javafx.scene.control.Label;
 import javafx.scene.control.RadioButton;
@@ -16,6 +13,8 @@ public class DiceGameController {
     private Strategy strat1 = new DieOneFirstStrategy();
     private Strategy strat2 = new DieTwoFirstStrategy();
 
+    private CareTaker ct;
+
     @FXML
     private Label l1;
 
@@ -23,39 +22,57 @@ public class DiceGameController {
     private Label l2;
 
     @FXML
+    private Label score;
+    @FXML
     private RadioButton rb1;
 
     @FXML
     private RadioButton rb2;
 
-    ToggleGroup tg = new ToggleGroup();
+    private ToggleGroup tg = new ToggleGroup();
+
+    private DiceState d = new DiceState(0,0,0,0);
+
+    private int currentScore = 0;
 
     public void initialize() {
         rb1.setToggleGroup(tg);
         rb2.setToggleGroup(tg);
         rb1.setSelected(true);
+        ct = CareTaker.getInstance(d);
     }
-
-    private record HighScore(String player, int score) {}
-
-
 
     private int throwNumber = 0;
 
+    public void save() {
+        CareTaker.getInstance(d).getDs().setCurrentScore(currentScore);
+        CareTaker.getInstance(d).getDs().setNbTour(throwNumber);
+        CareTaker.getInstance(d).getDs().setD1Value(Integer.parseInt(l1.getText()));
+        CareTaker.getInstance(d).getDs().setD2Value(Integer.parseInt(l2.getText()));
+    }
+
+    public void load() {
+        currentScore = CareTaker.getInstance(d).getDs().getCurrentScore();
+        throwNumber = CareTaker.getInstance(d).getDs().getNbTour();
+        l1.setText(String.valueOf(CareTaker.getInstance(d).getDs().getD1Value()));
+        l2.setText(String.valueOf(CareTaker.getInstance(d).getDs().getD2Value()));
+    }
+
     public void roll() {
-        int currentScore = 0;
         if (throwNumber < 10) {
             if (tg.getSelectedToggle().equals(rb1)) {
                 strat1.doRoll(d1, d2, l1, l2);
             } else if (tg.getSelectedToggle().equals(rb2)) {
                 strat2.doRoll(d1, d2, l1, l2);
             }
-            if (d1.getValue() + d2.getValue() == 7) currentScore += 10;
+            if (d1.getValue() + d2.getValue() == 7) {
+                currentScore += 10;
+                score.setText("Score : "+currentScore);
+            }
 
             throwNumber++;
         } else {
             HighScore h = new HighScore("Jean", currentScore);
-            System.out.println(currentScore);
             throwNumber = 0;
         }
     }
