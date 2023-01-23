@@ -3,8 +3,17 @@ package fr.ul.dicegame.Controller;
 import fr.ul.dicegame.Model.*;
 import javafx.fxml.FXML;
 import javafx.scene.control.Label;
+import javafx.scene.control.ListView;
 import javafx.scene.control.RadioButton;
 import javafx.scene.control.ToggleGroup;
+
+import java.beans.XMLDecoder;
+import java.beans.XMLEncoder;
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
+import java.util.ArrayList;
+import java.util.List;
 
 public class DiceGameController {
     private DieModel d1 = new DieModel();
@@ -15,7 +24,8 @@ public class DiceGameController {
 
     private CareTaker ct;
 
-    private XmlMapper map = new
+    private FileOutputStream fos;
+    private FileInputStream fis;
 
     @FXML
     private Label l1;
@@ -34,17 +44,42 @@ public class DiceGameController {
     @FXML
     private Label lthrow;
 
+    @FXML
+    private ListView hs;
+
     private ToggleGroup tg = new ToggleGroup();
 
     private DiceState d = new DiceState(0,0,0,0);
 
+    private XMLEncoder encoder;
+    private XMLDecoder decoder;
+
     private int currentScore = 0;
+
+    private List<HighScore> highscores = new ArrayList<>();
 
     public void initialize() {
         rb1.setToggleGroup(tg);
         rb2.setToggleGroup(tg);
         rb1.setSelected(true);
         ct = CareTaker.getInstance(d);
+        try {
+            fos = new FileOutputStream("Score.xml");
+            fis = new FileInputStream("Score.xml");
+        } catch (FileNotFoundException e) {
+            throw new RuntimeException(e);
+        }
+        encoder = new XMLEncoder(fos);
+        decoder = new XMLDecoder(fis);
+        try {
+            highscores = (ArrayList<HighScore>) decoder.readObject();
+        } catch (ArrayIndexOutOfBoundsException e) {
+            System.out.printf("fichier vide");
+        }
+        for (HighScore h : highscores) {
+            hs.getItems().add(h);
+        }
+        decoder.close();
     }
 
     private int throwNumber = 0;
@@ -80,6 +115,9 @@ public class DiceGameController {
             lthrow.setText("Lancé n°: "+throwNumber);
         } else {
             HighScore h = new HighScore("Jean", currentScore);
+            highscores.add(h);
+            hs.getItems().add(h);
+            encoder.writeObject(highscores);
             throwNumber = 0;
             currentScore = 0;
         }
